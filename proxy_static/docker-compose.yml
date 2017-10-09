@@ -1,0 +1,16 @@
+---
+version: '2'
+
+services:
+
+  static:
+    image: nginx:alpine
+    volumes:
+      - ./static/html/:/usr/share/nginx/html/
+
+  proxy:
+    image: nginx:alpine
+    ports:
+      - "8080:80"
+    volumes:
+      - ./proxy/conf.d/:/etc/nginx/conf.d/
