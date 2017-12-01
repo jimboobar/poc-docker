@@ -4,24 +4,24 @@ version: '2'
 services:
 
   registry:
-    image: couchdb
+    image: couchdb:1.6.1
     ports:
       - 5984:5984
     #volumes:
     #  - ./registry/data:/usr/local/var/lib/couchdb
   
   datacenters:
-    image: couchdb
+    image: couchdb:1.6.1
     ports:
       - 5985:5984
 
   hosts:
-    image: couchdb
+    image: couchdb:1.6.1
     ports:
       - 5986:5984
 
   services:
-    image: couchdb
+    image: couchdb:1.6.1
     ports:
       - 5987:5984
 
