@@ -6,11 +6,11 @@ services:
   static:
     image: nginx:alpine
     volumes:
-      - ./static/:/usr/share/nginx/html/
+      - ./static/:/usr/share/nginx/html/:ro
 
   proxy:
     image: nginx:alpine
     ports:
       - "8080:80"
     volumes:
-      - ./proxy/conf.d/:/etc/nginx/conf.d/
+      - ./proxy/conf.d/:/etc/nginx/conf.d/:ro
